@@ -1,7 +1,8 @@
 import Timer from './timer';
-import draw from './draw';
-import update from './update';
 import { loadImage, waitForImages } from './loader';
+
+function update() {}
+function draw() {}
 
 /* Main cycle */
 function run(res, ctx) {
