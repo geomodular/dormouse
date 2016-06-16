@@ -10,10 +10,19 @@ export function loadImage(name, src) {
   });
 }
 
-export function waitForImages(array) {
+export function saveStatic(name, data) {
+  return new Promise(function(resolve) {
+    resolve({
+      name: name,
+      data: data
+    });
+  });
+}
+
+export function waitForResources(array) {
   return Promise.all(array).then(function(images) {
     return images.reduce(function(acc, image) {
-      acc[image.name] = image.image;
+      acc[image.name] = image.image || image.data;
       return acc;
     }, {});
   });
