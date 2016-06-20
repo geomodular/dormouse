@@ -11,12 +11,7 @@ export function loadImage(name, src) {
 }
 
 export function saveStatic(name, data) {
-  return new Promise(function(resolve) {
-    resolve({
-      name: name,
-      data: data
-    });
-  });
+  return Promise.resolve({ name, data });
 }
 
 export function waitForResources(array) {
